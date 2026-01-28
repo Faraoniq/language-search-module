@@ -1,0 +1,317 @@
+/* ============================================
+   LANGUAGE SUPPORT CHECKER
+   Based on Figma design
+   ============================================ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 120px;
+  background-color: var(--color-neutral-1000);
+  border-radius: var(--radius-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-48);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-0);
+  text-align: center;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-regular);
+  color: #8E8D91;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Search Area */
+.searchArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 24px;
+  background-color: var(--color-neutral-700);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 60px;
+  transition: all var(--duration-2) var(--easing-out);
+  min-width: 400px;
+}
+
+.searchBarOpen {
+  border-color: var(--color-purple-500);
+  border-radius: 60px 60px 0 0;
+}
+
+.searchBarWithChip {
+  padding: 0 8px 0 24px;
+}
+
+.searchIcon {
+  color: #8E8D91;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-0);
+}
+
+.searchInput::placeholder {
+  color: #8E8D91;
+}
+
+/* Selected Chip */
+.selectedChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--color-neutral-800);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--duration-1) var(--easing-out);
+}
+
+.selectedChip:hover {
+  background-color: var(--color-neutral-700);
+}
+
+.chipFlag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.chipName {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-0);
+}
+
+.chipClose {
+  color: #8E8D91;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 56px;
+  width: 400px;
+  background-color: var(--color-neutral-800);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color var(--duration-1) var(--easing-out);
+}
+
+.dropdownItem:hover,
+.dropdownItemActive {
+  background-color: var(--color-neutral-700);
+}
+
+.itemFlag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.itemName {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: var(--font-weight-regular);
+  color: #8E8D91;
+}
+
+.dropdownItemActive .itemName {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-0);
+}
+
+.itemCheck {
+  color: var(--color-green-500);
+}
+
+/* Success Card */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 40px 48px;
+  background-color: #0A0A0A;
+  border: 1px solid var(--color-green-500);
+  border-radius: var(--radius-3);
+  animation: fadeIn var(--duration-3) var(--easing-out);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.successIcon {
+  color: var(--color-green-500);
+}
+
+.successTitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-0);
+}
+
+.successDesc {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  color: #8E8D91;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* CTA Buttons */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: 60px;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all var(--duration-1) var(--easing-out);
+}
+
+.ctaPrimary {
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-1000);
+}
+
+.ctaPrimary:hover {
+  background-color: var(--color-neutral-100);
+}
+
+.ctaArrow {
+  color: var(--color-neutral-1000);
+}
+
+.ctaSecondary {
+  background-color: var(--color-neutral-700);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-neutral-0);
+}
+
+.ctaSecondary:hover {
+  background-color: var(--color-neutral-600);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 24px;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: var(--font-size-32);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-16);
+  }
+
+  .searchBar {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+  }
+}
