@@ -3,12 +3,12 @@ import LanguageSupportChecker from './components/LanguageSupportChecker'
 function App() {
   return (
     <div style={{
-      padding: '40px',
+      padding: '0',
       minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#0a0a0a'
+      backgroundColor: 'transparent'
     }}>
       <LanguageSupportChecker />
     </div>
