@@ -1,0 +1,330 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 120px;
+  background-color: #000000;
+  border-radius: 40px;
+  border: 1px solid #333333;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #8E8D91;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.searchArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 24px;
+  background-color: #252525;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 60px;
+  transition: all 0.16s ease-out;
+  min-width: 400px;
+}
+
+.searchBarOpen {
+  border-color: #925BFF;
+}
+
+.searchBarWithChip {
+  padding: 8px 12px 8px 24px;
+  height: auto;
+  min-height: 56px;
+  flex-wrap: wrap;
+}
+
+.searchIcon {
+  color: #8E8D91;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.searchInput::placeholder {
+  color: #8E8D91;
+}
+
+.selectedChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.08s ease-out;
+}
+
+.selectedChip:hover {
+  background-color: #252525;
+}
+
+.chipFlag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.chipName {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.chipClose {
+  color: #8E8D91;
+}
+
+.dropdown {
+  position: absolute;
+  top: 64px;
+  width: 400px;
+  background-color: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.08s ease-out;
+}
+
+.dropdownItem:hover {
+  background-color: #252525;
+}
+
+.itemFlag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.itemName {
+  flex: 1;
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #8E8D91;
+}
+
+.itemCheck {
+  color: #22C55E;
+}
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.noResultsText {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #8E8D91;
+  margin: 0;
+}
+
+.noResultsLink {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #925BFF;
+  text-decoration: none;
+  transition: color 0.08s ease-out;
+}
+
+.noResultsLink:hover {
+  color: #a77aff;
+}
+
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 40px 48px;
+  background-color: #0A0A0A;
+  border: 1px solid #22C55E;
+  border-radius: 24px;
+  animation: fadeIn 0.24s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.successIcon {
+  color: #22C55E;
+}
+
+.successTitle {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.successDesc {
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #8E8D91;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: 60px;
+  font-family: 'Suisse Intl', 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.08s ease-out;
+}
+
+.ctaPrimary {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.ctaPrimary:hover {
+  background-color: #F5F5F5;
+}
+
+.ctaArrow {
+  color: #000000;
+}
+
+.ctaSecondary {
+  background-color: #252525;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.ctaSecondary:hover {
+  background-color: #515151;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 24px;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .searchBar {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+  }
+}
